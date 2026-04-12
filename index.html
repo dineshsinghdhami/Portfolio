@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DINESH DHAMI — RAW PORTFOLIO</title>
-  <!-- only system fonts + brutalist simplicity -->
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>DINESH DHAMI — PORTFOLIO</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="favicon-dineshsinghdhami.png" type="image/png">
+  <script src="script-index.js"></script>
   <style>
     /* ---------- RESET : BRUTALIST EDGE ---------- */
     * {
@@ -275,7 +276,7 @@
         <a href="https://github.com/dineshsinghdhami" target="_blank"><i class="fab fa-github"></i> dineshsinghdhami</a>
         <a href="https://linkedin.com/in/dineshsinghdhami1" target="_blank"><i class="fab fa-linkedin"></i> dineshsinghdhami1</a>
         <a href="https://x.com/dineshdhami001" target="_blank"><i class="fa-brands fa-x-twitter"></i> dineshdhami001</a>
-        <a href="mailto:dineshdhamidn@gmail.com"><i class="far fa-envelope"></i> dineshdhamidn@gmail.com</a>
+        <a href="javascript:void(0);" onclick="openDirectEmail()"><i class="far fa-envelope"></i> dineshdhamidn@gmail.com</a>
         
       </div>
       <div style="margin: 1rem 0; font-size: 0.75rem; border-top: 1px solid #3a3a2e; padding-top: 0.8rem;">
@@ -442,6 +443,26 @@
 
   // simple dynamic console greeting
   console.log("🔥 Brutalist portfolio — no glass, no curves");
+
+  // Email functionality - opens Gmail on desktop, email app on mobile
+function isMobileDevice() {
+  return /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+}
+
+function openDirectEmail() {
+  const subject = "Contact From Portfolio";
+  const body = "Hi Dinesh, I found your portfolio and would like to connect.";
+  const encodedSubject = encodeURIComponent(subject);
+  const encodedBody = encodeURIComponent(body);
+  const email = "dineshdhamidn@gmail.com";
+
+  if (isMobileDevice()) {
+    window.location.href = `mailto:${email}?subject=${encodedSubject}&body=${encodedBody}`;
+  } else {
+    const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodedSubject}&body=${encodedBody}`;
+    window.open(gmailURL, "_blank");
+  }
+}
 </script>
 </body>
 </html>
