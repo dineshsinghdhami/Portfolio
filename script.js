@@ -2,8 +2,8 @@
   const certificationsRaw = [
     "Strategic SEO & Digital Marketing - PK IT Club",
     "Computer Network & Security Certificate - NAST",
-    "Python Programming Internship - CodeAlpha",
-    "Web Design Certificate - Code IT Nepal",
+    "Python Programming Internship - CodeAlpha ",
+    "Web Design Certificate - Code IT Nepal  ",
     "Git & GitHub Course - Technology Channel",
     "Introduction to Cybersecurity - Cisco Networking Academy",
     "Introduction to Generative AI & Agents - Microsoft Learn"

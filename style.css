@@ -1,4 +1,4 @@
- /* ---------- RESET : BRUTALIST EDGE ---------- */
+/* Style.css */
     * {
       margin: 0;
       padding: 0;
@@ -12,13 +12,11 @@
       line-height: 1.4;
     }
 
-    /* main grid: split screen (fixed left, scroll right) */
     .grid {
       display: flex;
       min-height: 100vh;
     }
 
-    /* LEFT PANEL — sticky, high contrast, border-right */
     .left-panel {
       width: 320px;
       background: #0f0f0c;
