@@ -10,33 +10,38 @@
   ];
 
   const certificationUrls = [
-    "https://drive.google.com/file/d/1AchEaI6Dfk22RmH4TxS9q1cQJcA5C0lR/view?usp=sharing",     
-    "https://drive.google.com/file/d/13fKh1pW06IFeAywrfJZ09uGbTLuXBE7C/view?usp=sharing",  
-    "https://drive.google.com/file/d/1zfMVL2H7ccHAeusAGKOH2O5A36dV68it/view?usp=drive_link", 
-    "https://drive.google.com/file/d/1BwqvZgO-WPESzCfEeJRD2jO_r6zO5ZBn/view?usp=sharing",
-    "https://drive.google.com/file/d/1j22MMx3MTJs0PHph27yk1tN_29IwbHfu/view?usp=sharing",
-    "https://drive.google.com/file/d/1qMAov2ShAYrjMB_ySQXyRGTM9kw5f3uy/view?usp=sharing",
-    "https://drive.google.com/file/d/1UfIMxY7kUecXSu-6ezFe43TgqunVCXU0/view?usp=sharing"
-  ];
+  "https://drive.google.com/file/d/1AchEaI6Dfk22RmH4TxS9q1cQJcA5C0lR/preview",     
+  "https://drive.google.com/file/d/13fKh1pW06IFeAywrfJZ09uGbTLuXBE7C/preview",  
+  "https://drive.google.com/file/d/1zfMVL2H7ccHAeusAGKOH2O5A36dV68it/preview", 
+  "https://drive.google.com/file/d/1BwqvZgO-WPESzCfEeJRD2jO_r6zO5ZBn/preview",
+  "https://drive.google.com/file/d/1j22MMx3MTJs0PHph27yk1tN_29IwbHfu/preview",
+  "https://drive.google.com/file/d/1qMAov2ShAYrjMB_ySQXyRGTM9kw5f3uy/preview",
+  "https://drive.google.com/file/d/1UfIMxY7kUecXSu-6ezFe43TgqunVCXU0/preview"
+];
 
-  const certContainer = document.getElementById('brutCertsList');
-  if (certContainer) {
-    certificationsRaw.forEach((cert, index) => {
-      const div = document.createElement('div');
-      div.className = 'cert-card';
-      
-      // Create inner HTML with link logo (external link icon)
-      const url = certificationUrls[index] || '#';  // fallback to '#' if no URL
-      div.innerHTML = `
-        <i class="fas fa-shield-alt" style="color:#ff4d4d;"></i>
-        <span>${cert}</span>
-        <a href="${url}" target="_blank" rel="noopener noreferrer" style="margin-left: 8px; color: #ff4d4d; text-decoration: none;">
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      `;
-      certContainer.appendChild(div);
-    });
-  }
+const certContainer = document.getElementById('brutCertsList');
+if (certContainer) {
+  certificationsRaw.forEach((cert, index) => {
+    const div = document.createElement('div');
+    div.className = 'cert-card';
+    
+    const url = certificationUrls[index] || '#';
+    div.innerHTML = `
+      <i class="fas fa-shield-alt" style="color:#ff4d4d;"></i>
+      <span style="flex: 1;">${cert}</span>
+      <a href="${url}" target="_blank" rel="noopener noreferrer" style="color: #ff4d4d; text-decoration: none; margin-left: auto;" onclick="openCertificate(event, '${url}')">
+        <i class="fas fa-external-link-alt"></i> 
+      </a>
+    `;
+    certContainer.appendChild(div);
+  });
+}
+
+// Add this function to open certificate in same page without Google account popup
+function openCertificate(event, url) {
+  event.preventDefault();
+  window.open(url, '_blank');
+}
 
   const darkBtn = document.getElementById('darkModeBrut');
   const bodyEl = document.body;

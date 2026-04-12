@@ -250,3 +250,10 @@
         grid-template-columns: 1fr;
       }
     }
+
+    .cert-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
