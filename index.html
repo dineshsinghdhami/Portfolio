@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DINESH DHAMI — RAW PORTFOLIO</title>
+  <!-- only system fonts + brutalist simplicity -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* ---------- RESET : BRUTALIST EDGE ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #faf6ed;
+      color: #1f1c14;
+      font-family: 'Courier New', 'SF Mono', 'Fira Code', monospace;
+      line-height: 1.4;
+    }
+
+    /* main grid: split screen (fixed left, scroll right) */
+    .grid {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* LEFT PANEL — sticky, high contrast, border-right */
+    .left-panel {
+      width: 320px;
+      background: #0f0f0c;
+      color: #f0e6d2;
+      padding: 2rem 1.5rem;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      border-right: 4px solid #ff4d4d;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .name h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      text-transform: uppercase;
+      border-left: 6px solid #ff4d4d;
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .role-tag {
+      font-size: 0.8rem;
+      background: #ff4d4d;
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      color: #0f0f0c;
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+
+    .contact {
+      margin: 2rem 0;
+    }
+    .contact a {
+      display: block;
+      color: #e6dccf;
+      text-decoration: none;
+      font-size: 0.8rem;
+      margin: 0.7rem 0;
+      border-bottom: 1px dashed #3a3a2e;
+      padding-bottom: 0.2rem;
+      width: fit-content;
+    }
+    .contact a:hover {
+      color: #ff4d4d;
+      border-bottom-color: #ff4d4d;
+    }
+
+    .left-footer {
+      font-size: 0.7rem;
+      color: #8a8478;
+      border-top: 1px solid #2a2a20;
+      padding-top: 1rem;
+    }
+
+    /* RIGHT PANEL — scrolling content */
+    .right-content {
+      flex: 1;
+      padding: 2rem 2.5rem;
+      overflow-y: auto;
+    }
+
+    /* brutalist section styling */
+    .brut-section {
+      margin-bottom: 3rem;
+      border-bottom: 2px solid #1f1c14;
+      padding-bottom: 1.5rem;
+    }
+    .brut-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: #1f1c14;
+      display: inline-block;
+      color: #faf6ed;
+      padding: 0.2rem 1rem;
+      letter-spacing: -0.5px;
+      margin-bottom: 1.2rem;
+    }
+
+    /* education blocks - raw list */
+    .edu-entry {
+      margin-bottom: 1rem;
+      padding-left: 0.5rem;
+      border-left: 3px solid #ff4d4d;
+    }
+    .edu-entry h3 {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .edu-meta {
+      font-size: 0.75rem;
+      color: #5a4e3a;
+      margin-top: 0.2rem;
+    }
+
+    /* skills: inline brutal chips */
+    .skill-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.8rem;
+    }
+    .skill-brut {
+      background: #e6dccf;
+      padding: 0.2rem 0.7rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      border: 1px solid #1f1c14;
+    }
+
+    /* experience / projects : border-box style */
+    .exp-item, .project-item {
+      border: 1.5px solid #1f1c14;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      background: #fffcf5;
+      transition: 0.1s linear;
+    }
+    .exp-item:hover, .project-item:hover {
+      background: #e9e0d1;
+      transform: translateX(4px);
+    }
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    .date-brut {
+      font-size: 0.7rem;
+      background: #1f1c14;
+      color: #faf6ed;
+      padding: 0.1rem 0.6rem;
+    }
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.6rem 0;
+    }
+    .tech-brut {
+      font-size: 0.65rem;
+      background: #d9cebc;
+      padding: 0.1rem 0.5rem;
+      text-transform: uppercase;
+    }
+
+    /* certifications: 2 column raw grid */
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+    .cert-card {
+      border: 1px solid #1f1c14;
+      padding: 0.5rem 0.8rem;
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* utility */
+    .highlight-red {
+      color: #ff4d4d;
+      font-weight: bold;
+    }
+
+    button#darkModeBrut {
+      background: #2a251c;
+      border: 1px solid #ff4d4d;
+      color: #ff4d4d;
+      padding: 0.3rem 0.6rem;
+      cursor: pointer;
+      font-family: monospace;
+      font-size: 0.7rem;
+      margin-top: 1rem;
+      width: fit-content;
+    }
+
+    /* dark mode (optional but still raw) */
+    body.dark-mode {
+      background: #12100c;
+      color: #ece3d7;
+    }
+    body.dark-mode .right-content .brut-section {
+      border-bottom-color: #ff4d4d;
+    }
+    body.dark-mode .exp-item, body.dark-mode .project-item, body.dark-mode .cert-card {
+      background: #1d1a14;
+      border-color: #ff4d4d;
+      color: #f0e6d2;
+    }
+    body.dark-mode .skill-brut {
+      background: #2c261e;
+      color: #f0e6d2;
+      border-color: #ff4d4d;
+    }
+    body.dark-mode .tech-brut {
+      background: #352f24;
+    }
+    body.dark-mode .brut-title {
+      background: #ff4d4d;
+      color: #12100c;
+    }
+
+    @media (max-width: 780px) {
+      .grid {
+        flex-direction: column;
+      }
+      .left-panel {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 4px solid #ff4d4d;
+      }
+      .right-content {
+        padding: 1.5rem;
+      }
+      .certs-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="grid">
+  <div class="left-panel">
+    <div>
+      <div class="name">
+        <h1>DINESH<br>SINGH<br>DHAMI</h1>
+        <span class="role-tag">CODING NEWBIE</span>
+      </div>
+      <div class="contact">
+        <a href="https://github.com/dineshsinghdhami" target="_blank"><i class="fab fa-github"></i> dineshsinghdhami</a>
+        <a href="https://linkedin.com/in/dineshsinghdhami1" target="_blank"><i class="fab fa-linkedin"></i> dineshsinghdhami1</a>
+        <a href="https://x.com/dineshdhami001" target="_blank"><i class="fa-brands fa-x-twitter"></i> dineshdhami001</a>
+        <a href="mailto:dineshdhamidn@gmail.com"><i class="far fa-envelope"></i> dineshdhamidn@gmail.com</a>
+        
+      </div>
+      <div style="margin: 1rem 0; font-size: 0.75rem; border-top: 1px solid #3a3a2e; padding-top: 0.8rem;">
+  <i class="fas fa-user-graduate"></i> BE Computer Engineering · NAST (2022–2026)<br>
+  <span style="font-size:0.7rem;">Full-Stack Dev | Cybersecurity Enthusiast</span>
+</div>
+    </div>
+    <div class="left-footer">
+      <button id="darkModeBrut" style="background:#1f1c14; border:1px solid #ff4d4d;">⚡ TOGGLE DARK MODE</button>
+      <p style="margin-top: 0.8rem;">#coffee-in-code-out </p>
+    </div>
+  </div>
+
+  <div class="right-content">
+
+    <div class="brut-section">
+      <div class="brut-title">📐 education</div>
+      <div class="edu-entry">
+        <h3>National Academy of Science and Technology (NAST)</h3>
+        <div class="edu-meta">BE . Computer · 2022–2026 · <span class="highlight-red">8th semester (ongoing)</span></div>
+        <div class="edu-meta">Coursework: DSA, OOP, Web Dev, DBMS, OS</div>
+      </div>
+      <div class="edu-entry">
+        <h3>Aishwarya Vidya Niketan (AVN), Dhangadhi</h3>
+        <div class="edu-meta">Higher Secondary (GPA 2.97) | Secondary Education (GPA 3.40)</div>
+      </div>
+    </div>
+
+    <!-- TECH SKILLS - NO CARDS, JUST RAW TAGS -->
+    <div class="brut-section">
+      <div class="brut-title">⚙️ toolkit</div>
+      <div class="skill-grid">
+        <span class="skill-brut">HTML/CSS</span><span class="skill-brut">C/C++</span><span class="skill-brut">Java</span>
+        <span class="skill-brut">Python</span><span class="skill-brut">JavaScript</span><span class="skill-brut">SQL</span>
+        <span class="skill-brut">Django</span><span class="skill-brut">Flask</span><span class="skill-brut">Laravel</span>
+        <span class="skill-brut">DSA</span><span class="skill-brut">Git/GitHub</span><span class="skill-brut">PenTesting</span>
+        <span class="skill-brut">Leadership</span><span class="skill-brut">Teamwork</span><span class="skill-brut">Problem Solving</span>
+      </div>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="brut-section">
+      <div class="brut-title">💼 work</div>
+      <div class="exp-item">
+        <div class="exp-header">
+          <span>Code Alpha · Python Programming Intern (Remote)</span>
+          <span class="date-brut">Jan 2026 – Feb 2026</span>
+        </div>
+        <ul style="margin-left: 1rem; margin-top: 0.4rem; font-size:0.8rem;">
+          <li>Built mini-projects: Chatbot, Stock Portfolio Tracker, Hangman Game, Task Automation scripts.</li>
+          <li>Applied DSA, debugging & clean code practices.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PROJECTS - RAW, BORDER HEAVY -->
+    <div class="brut-section">
+  <div class="brut-title">🖥️ projects</div>
+  
+  <div class="project-item">
+    <div class="exp-header">
+      <span>
+        <i class="fas fa-question-circle"></i> Quizzer – Web Quiz App
+        <a href="https://quizzerhub.pythonanywhere.com/login" target="_blank" rel="noopener noreferrer" style="margin-left: 8px; color: #ff4d4d; text-decoration: none;">
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </span>
+    </div>
+    <div class="tech-list"><span class="tech-brut">Flask</span><span class="tech-brut">SQLite</span><span class="tech-brut">JavaScript</span></div>
+    <p style="font-size:0.85rem;">Full-stack quiz platform with real-time scoring, dynamic questions & interactive feedback.</p>
+  </div>
+  
+  <div class="project-item">
+    <div class="exp-header">
+      <span>
+        <i class="fas fa-users"></i> Nepixo – Social Media Platform
+        <a href="https://nepixo.pythonanywhere.com/" target="_blank" rel="noopener noreferrer" style="margin-left: 8px; color: #ff4d4d; text-decoration: none;">
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </span>
+    </div>
+    <div class="tech-list"><span class="tech-brut">Django</span><span class="tech-brut">SQLite</span><span class="tech-brut">Bootstrap</span></div>
+    <p style="font-size:0.85rem;">Profiles, posts, like/comment, follow system, direct messaging — Django auth.</p>
+  </div>
+  
+  
+</div>
+       <!-- CERTIFICATIONS & ACHIEVEMENTS -->
+    <div class="brut-section">
+      <div class="brut-title">🏅 certs & achievements</div>
+      <div class="certs-grid" id="brutCertsList"></div>
+      <div style="margin-top: 1rem; border: 1px solid #1f1c14; padding: 0.5rem; background:#d59a33; font-size:0.7rem;">
+        <i class="fas fa-certificate"></i> <strong>Certified Junior Web Application Penetration Tester</strong> – Stuttle Security (ECR-02745)
+      </div>
+    </div>
+
+    <!-- SINGLE FOOTER LINE - NO EXTRA SPACE -->
+    <div style="margin-top: 1rem; font-size:0.7rem; text-align:center;">
+      DINESH SINGH DHAMI · Dhangadhi, Nepal · dineshdhamidn@gmail.com
+    </div>
+
+  </div> <!-- This closes right-content -->
+</div> <!-- This closes grid -->
+
+<script>
+  // ... rest of your script remains the same ...
+  // FULL CERTIFICATIONS LIST (from resume)
+  const certificationsRaw = [
+    "Strategic SEO & Digital Marketing - PK IT Club",
+    "Computer Network & Security Certificate - NAST",
+    "Python Programming Internship - CodeAlpha",
+    "Web Design Certificate - Code IT Nepal",
+    "Git & GitHub Course - Technology Channel",
+    "Introduction to Cybersecurity - Cisco Networking Academy",
+    "Introduction to Generative AI & Agents - Microsoft Learn"
+  ];
+
+  // ADD YOUR ACTUAL CERTIFICATE URLs HERE (replace placeholders)
+  const certificationUrls = [
+    "https://drive.google.com/file/d/1AchEaI6Dfk22RmH4TxS9q1cQJcA5C0lR/view?usp=sharing",      // URL for SEO cert
+    "https://drive.google.com/file/d/13fKh1pW06IFeAywrfJZ09uGbTLuXBE7C/view?usp=sharing",  // URL for Network cert
+    "https://drive.google.com/file/d/1zfMVL2H7ccHAeusAGKOH2O5A36dV68it/view?usp=drive_link",   // URL for Python internship
+    "https://drive.google.com/file/d/1BwqvZgO-WPESzCfEeJRD2jO_r6zO5ZBn/view?usp=sharing",
+    "https://drive.google.com/file/d/1j22MMx3MTJs0PHph27yk1tN_29IwbHfu/view?usp=sharing",
+    "https://drive.google.com/file/d/1qMAov2ShAYrjMB_ySQXyRGTM9kw5f3uy/view?usp=sharing",
+    "https://drive.google.com/file/d/1UfIMxY7kUecXSu-6ezFe43TgqunVCXU0/view?usp=sharing"
+  ];
+
+  const certContainer = document.getElementById('brutCertsList');
+  if (certContainer) {
+    certificationsRaw.forEach((cert, index) => {
+      const div = document.createElement('div');
+      div.className = 'cert-card';
+      
+      // Create inner HTML with link logo (external link icon)
+      const url = certificationUrls[index] || '#';  // fallback to '#' if no URL
+      div.innerHTML = `
+        <i class="fas fa-shield-alt" style="color:#ff4d4d;"></i>
+        <span>${cert}</span>
+        <a href="${url}" target="_blank" rel="noopener noreferrer" style="margin-left: 8px; color: #ff4d4d; text-decoration: none;">
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      `;
+      certContainer.appendChild(div);
+    });
+  }
+
+
+  // Brutal dark mode toggle
+  const darkBtn = document.getElementById('darkModeBrut');
+  const bodyEl = document.body;
+  if(localStorage.getItem('brutal_theme') === 'dark') {
+    bodyEl.classList.add('dark-mode');
+    darkBtn.innerText = '☀️ LIGHT MODE';
+  } else {
+    darkBtn.innerText = '🌙 DARK MODE';
+  }
+  darkBtn.addEventListener('click', () => {
+    bodyEl.classList.toggle('dark-mode');
+    const isDark = bodyEl.classList.contains('dark-mode');
+    localStorage.setItem('brutal_theme', isDark ? 'dark' : 'light');
+    darkBtn.innerText = isDark ? '☀️ LIGHT MODE' : '🌙 DARK MODE';
+  });
+
+  // simple dynamic console greeting
+  console.log("🔥 Brutalist portfolio — no glass, no curves");
+</script>
+</body>
+</html>
