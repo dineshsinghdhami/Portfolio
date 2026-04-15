@@ -1,0 +1,259 @@
+/* Style.css */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #faf6ed;
+      color: #1f1c14;
+      font-family: 'Courier New', 'SF Mono', 'Fira Code', monospace;
+      line-height: 1.4;
+    }
+
+    .grid {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .left-panel {
+      width: 320px;
+      background: #0f0f0c;
+      color: #f0e6d2;
+      padding: 2rem 1.5rem;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      border-right: 4px solid #ff4d4d;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .name h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      text-transform: uppercase;
+      border-left: 6px solid #ff4d4d;
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .role-tag {
+      font-size: 0.8rem;
+      background: #ff4d4d;
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      color: #0f0f0c;
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+
+    .contact {
+      margin: 2rem 0;
+    }
+    .contact a {
+      display: block;
+      color: #e6dccf;
+      text-decoration: none;
+      font-size: 0.8rem;
+      margin: 0.7rem 0;
+      border-bottom: 1px dashed #3a3a2e;
+      padding-bottom: 0.2rem;
+      width: fit-content;
+    }
+    .contact a:hover {
+      color: #ff4d4d;
+      border-bottom-color: #ff4d4d;
+    }
+
+    .left-footer {
+      font-size: 0.7rem;
+      color: #8a8478;
+      border-top: 1px solid #2a2a20;
+      padding-top: 1rem;
+    }
+
+    /* RIGHT PANEL — scrolling content */
+    .right-content {
+      flex: 1;
+      padding: 2rem 2.5rem;
+      overflow-y: auto;
+    }
+
+    /* brutalist section styling */
+    .brut-section {
+      margin-bottom: 3rem;
+      border-bottom: 2px solid #1f1c14;
+      padding-bottom: 1.5rem;
+    }
+    .brut-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: #1f1c14;
+      display: inline-block;
+      color: #faf6ed;
+      padding: 0.2rem 1rem;
+      letter-spacing: -0.5px;
+      margin-bottom: 1.2rem;
+    }
+
+    /* education blocks - raw list */
+    .edu-entry {
+      margin-bottom: 1rem;
+      padding-left: 0.5rem;
+      border-left: 3px solid #ff4d4d;
+    }
+    .edu-entry h3 {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    .edu-meta {
+      font-size: 0.75rem;
+      color: #5a4e3a;
+      margin-top: 0.2rem;
+    }
+
+    /* skills: inline brutal chips */
+    .skill-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.8rem;
+    }
+    .skill-brut {
+      background: #e6dccf;
+      padding: 0.2rem 0.7rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      border: 1px solid #1f1c14;
+    }
+
+    /* experience / projects : border-box style */
+    .exp-item, .project-item {
+      border: 1.5px solid #1f1c14;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      background: #fffcf5;
+      transition: 0.1s linear;
+    }
+    .exp-item:hover, .project-item:hover {
+      background: #e9e0d1;
+      transform: translateX(4px);
+    }
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    .date-brut {
+      font-size: 0.7rem;
+      background: #1f1c14;
+      color: #faf6ed;
+      padding: 0.1rem 0.6rem;
+    }
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.6rem 0;
+    }
+    .tech-brut {
+      font-size: 0.65rem;
+      background: #d9cebc;
+      padding: 0.1rem 0.5rem;
+      text-transform: uppercase;
+    }
+
+    /* certifications: 2 column raw grid */
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+    .cert-card {
+      border: 1px solid #1f1c14;
+      padding: 0.5rem 0.8rem;
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* utility */
+    .highlight-red {
+      color: #ff4d4d;
+      font-weight: bold;
+    }
+
+    button#darkModeBrut {
+      background: #2a251c;
+      border: 1px solid #ff4d4d;
+      color: #ff4d4d;
+      padding: 0.3rem 0.6rem;
+      cursor: pointer;
+      font-family: monospace;
+      font-size: 0.7rem;
+      margin-top: 1rem;
+      width: fit-content;
+    }
+
+    /* dark mode (optional but still raw) */
+    body.dark-mode {
+      background: #12100c;
+      color: #ece3d7;
+    }
+    body.dark-mode .right-content .brut-section {
+      border-bottom-color: #ff4d4d;
+    }
+    body.dark-mode .exp-item, body.dark-mode .project-item, body.dark-mode .cert-card {
+      background: #1d1a14;
+      border-color: #ff4d4d;
+      color: #f0e6d2;
+    }
+    body.dark-mode .skill-brut {
+      background: #2c261e;
+      color: #f0e6d2;
+      border-color: #ff4d4d;
+    }
+    body.dark-mode .tech-brut {
+      background: #352f24;
+    }
+    body.dark-mode .brut-title {
+      background: #ff4d4d;
+      color: #12100c;
+    }
+
+    @media (max-width: 780px) {
+      .grid {
+        flex-direction: column;
+      }
+      .left-panel {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 4px solid #ff4d4d;
+      }
+      .right-content {
+        padding: 1.5rem;
+      }
+      .certs-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .cert-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
