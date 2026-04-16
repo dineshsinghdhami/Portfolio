@@ -1,22 +1,24 @@
 
-  const certificationsRaw = [
-    "Strategic SEO & Digital Marketing - PK IT Club",
-    "Computer Network & Security Certificate - NAST",
-    "Python Programming Internship - CodeAlpha ",
-    "Web Design Certificate - Code IT Nepal  ",
-    "Git & GitHub Course - Technology Channel",
-    "Introduction to Cybersecurity - Cisco Networking Academy",
-    "Introduction to Generative AI & Agents - Microsoft Learn"
-  ];
+const certificationsRaw = [
+  "Strategic SEO & Digital Marketing - PK IT Club",
+  "Computer Network & Security Certificate - NAST",
+  "Python Programming Internship - CodeAlpha",
+  "Web Design Certificate - Code IT Nepal",
+  "Git & GitHub Course - Technology Channel",
+  "Introduction to Cybersecurity - Cisco Networking Academy",
+  "Introduction to Generative AI & Agents - Microsoft Learn",
+  "Graphic Designing Training (Unleash Your Creativity) - Code for Change Birgunj"
+];
 
-  const certificationUrls = [
-  "https://drive.google.com/file/d/1AchEaI6Dfk22RmH4TxS9q1cQJcA5C0lR/preview",     
-  "https://drive.google.com/file/d/13fKh1pW06IFeAywrfJZ09uGbTLuXBE7C/preview",  
-  "https://drive.google.com/file/d/1zfMVL2H7ccHAeusAGKOH2O5A36dV68it/preview", 
+const certificationUrls = [
+  "https://drive.google.com/file/d/1AchEaI6Dfk22RmH4TxS9q1cQJcA5C0lR/preview",
+  "https://drive.google.com/file/d/13fKh1pW06IFeAywrfJZ09uGbTLuXBE7C/preview",
+  "https://drive.google.com/file/d/1zfMVL2H7ccHAeusAGKOH2O5A36dV68it/preview",
   "https://drive.google.com/file/d/1BwqvZgO-WPESzCfEeJRD2jO_r6zO5ZBn/preview",
   "https://drive.google.com/file/d/1j22MMx3MTJs0PHph27yk1tN_29IwbHfu/preview",
   "https://drive.google.com/file/d/1qMAov2ShAYrjMB_ySQXyRGTM9kw5f3uy/preview",
-  "https://drive.google.com/file/d/1UfIMxY7kUecXSu-6ezFe43TgqunVCXU0/preview"
+  "https://drive.google.com/file/d/1UfIMxY7kUecXSu-6ezFe43TgqunVCXU0/preview",
+  "https://drive.google.com/file/d/1Q0SWLNAAXGMu0F5RoV3np1X5s43yLYx7/view?usp=sharing"
 ];
 
 const certContainer = document.getElementById('brutCertsList');
